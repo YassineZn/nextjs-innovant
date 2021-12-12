@@ -11,15 +11,21 @@ export default class Home extends Component {
     super();
     this.state = {
       toRegister: true,
+      check1: "/checkmark.svg",
+      check2: "",
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
   }
   handleClick() {
     this.setState({ toRegister: true });
+    this.setState({ check1: "/checkmark.svg" });
+    this.setState({ check2: "" });
   }
   handleClick1() {
     this.setState({ toRegister: false });
+    this.setState({ check1: "" });
+    this.setState({ check2: "/checkmark.svg" });
   }
   render() {
     return (
@@ -29,12 +35,14 @@ export default class Home extends Component {
             <Register
               title={"Register"}
               icon={"./register.svg"}
+              check={this.state.check1}
               text={"Browse and find what you need"}
               click={this.handleClick}
             />
             <Register
               title={"Sign In"}
               icon={"./log-in.svg"}
+              check={this.state.check2}
               text={"Browse and find what you need"}
               click={this.handleClick1}
             />

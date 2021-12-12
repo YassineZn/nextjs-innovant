@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/register.module.scss";
 
-export const Register = ({ title, icon, text, click }) => {
+export const Register = ({ title, icon, text, click, check }) => {
   return (
     <div onClick={click}>
       <div
@@ -9,7 +9,7 @@ export const Register = ({ title, icon, text, click }) => {
           title == "Sign In" ? styles["margin"] : styles[""]
         }`}
       >
-        <img src="./public/checkmark.svg" alt="" />
+        <img className={styles.check} src={check} alt="" />
         <div className={styles.logo}>
           <img src={icon} alt="" />
         </div>
