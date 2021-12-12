@@ -1,12 +1,27 @@
+.registerContainer {
+  display: flex;
+  border: 2px solid #707070;
+  border-radius: 0.4rem;
+}
+
 .container {
-  padding: 0 2rem;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.flexContainer {
+  min-height: 75vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
-  min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
