@@ -6,8 +6,8 @@ export const Header = () => {
   return (
     <header>
       <nav className={styles.topNav}>
-        <Link href="#">Sign in</Link>
-        <Link href="#">Sign up</Link>
+        <Link href="/signin">Sign in</Link>
+        <Link href="/signup">Sign up</Link>
       </nav>
 
       <nav className={styles.mainNav}>

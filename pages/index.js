@@ -5,6 +5,7 @@ import { Register } from "../components/Register";
 import { FormRegister } from "../components/FormRegister";
 import styles from "../styles/Home.module.css";
 import { FormSign } from "../components/FormSign";
+import Router from "next/router";
 
 export default class Home extends Component {
   constructor() {
@@ -27,27 +28,35 @@ export default class Home extends Component {
     this.setState({ check1: "" });
     this.setState({ check2: "/checkmark.svg" });
   }
+
+  session = false;
   render() {
     return (
       <div className={styles.flexContainer}>
         <div className={styles.container}>
-          <div className={styles.registerContainer}>
-            <Register
-              title={"Register"}
-              icon={"./register.svg"}
-              check={this.state.check1}
-              text={"Browse and find what you need"}
-              click={this.handleClick}
-            />
-            <Register
-              title={"Sign In"}
-              icon={"./log-in.svg"}
-              check={this.state.check2}
-              text={"Browse and find what you need"}
-              click={this.handleClick1}
-            />
-          </div>
-          {this.state.toRegister ? <FormRegister /> : <FormSign />}
+          {this.session ? (
+            <h1>Hello</h1>
+          ) : (
+            <div className={styles.flexContainer}>
+              <div className={styles.container}>
+                <div className={styles.registerContainer}>
+                  <Register
+                    title={"Register"}
+                    icon={"./register.svg"}
+                    text={"Browse and find what you need"}
+                    link="signup"
+                  />
+
+                  <Register
+                    title={"Sign In"}
+                    icon={"./log-in.svg"}
+                    text={"Browse and find what you need"}
+                    link="signin"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );
