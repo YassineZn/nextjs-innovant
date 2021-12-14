@@ -11,21 +11,22 @@ export const Header = () => {
       </nav>
 
       <nav className={styles.mainNav}>
-        <div className={styles.logo}>
-          <div className={styles.orange}>
-            <div className={styles.blue}></div>
+        <Link href="/">
+          <div className={styles.logo}>
+            <div className={styles.orange}>
+              <div className={styles.blue}></div>
+            </div>
           </div>
-        </div>
-
+        </Link>
         <ul>
           <li>
-            <Link href="#">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="#">About</Link>
+            <Link href="/">About</Link>
           </li>
           <li>
-            <Link href="#">Contact us</Link>
+            <Link href="/">Contact us</Link>
           </li>
         </ul>
       </nav>

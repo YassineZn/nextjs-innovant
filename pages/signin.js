@@ -5,7 +5,11 @@ import { Register } from "../components/Register";
 import { FormRegister } from "../components/FormRegister";
 import styles from "../styles/Home.module.css";
 import { FormSign } from "../components/FormSign";
+import { signIn } from "next-auth/react";
+
 export default function signin() {
+  let u = "john@gmail.com";
+  let p = "test";
   return (
     <div>
       <div className={styles.flexContainer}>
@@ -25,7 +29,14 @@ export default function signin() {
               link="signin"
             />
           </div>
-          <FormSign />
+          <FormSign
+            click={() => {
+              signIn("credentials", {
+                username: u,
+                password: p,
+              });
+            }}
+          />
         </div>
       </div>
     </div>
