@@ -25,9 +25,7 @@ export const FormRegister = (handleChange, state) => {
           placeholder="Repeat Password"
           required
         />
-        <button type="submit" id="btn" value="Submit">
-          dsadsa
-        </button>
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );

@@ -49,7 +49,6 @@ class signup extends React.Component {
                 text={"Browse and find what you need"}
                 link="signup"
               />
-
               <Register
                 title={"Sign In"}
                 icon={"./log-in.svg"}
@@ -57,61 +56,7 @@ class signup extends React.Component {
                 link="signin"
               />
             </div>
-            <form
-              action=""
-              className={styles.mainForm}
-              onSubmit={this.handleSubmit}
-            >
-              <div className={styles.name}>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={this.state.firstName}
-                  onChange={this.handleChange}
-                  placeholder="First Name"
-                  required
-                />
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  onChange={this.handleChange}
-                  value={this.state.lastName}
-                  placeholder="Last Name"
-                  required
-                />
-              </div>
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                required
-                name="email"
-                onChange={this.handleChange}
-                value={this.state.email}
-              />
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                name="password"
-                onChange={this.handleChange}
-                value={this.state.password}
-                required
-              />
-              <input
-                type="Password"
-                id="password2"
-                name="password2"
-                value={this.state.password2}
-                onChange={this.handleChange}
-                placeholder="Repeat Password"
-                required
-              />
-              <input type="submit" value="Submit" />
-            </form>
-            <h1>{this.state.users[0]}</h1>;
+            <FormRegister />
           </div>
         </div>
       </div>
