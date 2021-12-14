@@ -31,6 +31,7 @@ export default NextAuth({
       },
     }),
   ],
+  database: process.env.DATABASE_URL,
   callbacks: {
     jwt: ({ token, user }) => {
       // first time jwt callback is run, user object is available
@@ -54,6 +55,6 @@ export default NextAuth({
     encryption: true,
   },
   pages: {
-    signIn: "/signin",
+    signIn: "/",
   },
 });

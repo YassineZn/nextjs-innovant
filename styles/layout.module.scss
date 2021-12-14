@@ -2,12 +2,21 @@
   display: flex;
   background-color: #222222;
   align-items: center;
+  justify-content: space-between;
+  .logout {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-right: 2em;
+  }
 }
 .mainNav ul {
   color: white;
   display: flex;
   gap: 1.6rem;
-  padding: 2.4rem;
+  padding: 2.4rem 0;
   align-items: center;
 }
 .topNav {

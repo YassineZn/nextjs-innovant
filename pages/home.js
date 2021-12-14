@@ -16,11 +16,8 @@ export default function Home() {
     <div className={styles.flexContainer}>
       <div className={styles.container}>
         {session ? (
-          <div className={styles.bigContainer}>
-            <div className={styles.logoContainer}>
-              <Logo />
-            </div>
-            <p className={styles.p}>The Logo Above is made in Pure CSS :D</p>
+          <div className={styles.logoContainer}>
+            <Logo />
           </div>
         ) : (
           <div className={styles.flexContainer}>

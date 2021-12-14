@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Router from "next/router";
+
 import Image from "next/image";
 import { Component } from "react";
 import { Register } from "../components/Register";
@@ -10,6 +12,7 @@ import { signIn } from "next-auth/react";
 export default function signin() {
   let u = "john@gmail.com";
   let p = "test";
+
   return (
     <div>
       <div className={styles.flexContainer}>

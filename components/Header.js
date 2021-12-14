@@ -1,24 +1,28 @@
 import Link from "next/link";
 
 import styles from "../styles/layout.module.scss";
+import { Logo } from "./Logo";
+import { session, signOut, useSession } from "next-auth/react";
 
 export const Header = () => {
+  const { data: session } = useSession();
+  console.log("session", session);
   return (
     <header>
-      <nav className={styles.topNav}>
-        <Link href="/signin">Sign in</Link>
-        <Link href="/signup">Sign up</Link>
-      </nav>
+      {!session ? (
+        <nav className={styles.topNav}>
+          <Link href="/signin">Sign in</Link>
+          <Link href="/signup">Sign up</Link>
+        </nav>
+      ) : (
+        <></>
+      )}
 
       <nav className={styles.mainNav}>
-        <Link href="/">
-          <div className={styles.logo}>
-            <div className={styles.orange}>
-              <div className={styles.blue}></div>
-            </div>
-          </div>
-        </Link>
         <ul>
+          <li>
+            <Logo />
+          </li>
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -29,6 +33,13 @@ export const Header = () => {
             <Link href="/">Contact us</Link>
           </li>
         </ul>
+        {session ? (
+          <button className={styles.logout} onClick={() => signOut()}>
+            J
+          </button>
+        ) : (
+          <></>
+        )}
       </nav>
     </header>
   );
