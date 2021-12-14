@@ -35,7 +35,7 @@ export const Header = () => {
         </ul>
         {session ? (
           <button className={styles.logout} onClick={() => signOut()}>
-            J
+            <strong>J</strong>
           </button>
         ) : (
           <></>
